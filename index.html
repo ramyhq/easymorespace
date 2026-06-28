@@ -139,24 +139,14 @@
     .dl-mac:hover { background: #2a2a2a; color: #fff; }
 
     .screenshot-box {
-      background: #fafafa;
-      border: 2px dashed #ddd;
-      border-radius: 4px;
-      padding: 20px;
       text-align: center;
     }
-    .screenshot-box .placeholder {
-      display: inline-block;
-      width: 100%;
-      max-width: 460px;
-      height: 240px;
-      background: #eee;
-      border: 1px solid #ddd;
-      border-radius: 2px;
-      line-height: 240px;
-      color: #aaa;
-      font-size: 14px;
-      vertical-align: middle;
+    .screenshot-box img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .features {
@@ -367,10 +357,7 @@
   <div class="section">
     <h2>Screenshot</h2>
     <div class="screenshot-box">
-      <div class="placeholder">
-        App Screenshot<br>
-        <small style="font-size:11px;font-style:normal;color:#bbb;">Replace with your app screenshot</small>
-      </div>
+      <img src="emsv9screenshot.png" alt="Easy More Space v9.1 Screenshot">
     </div>
   </div>
 
@@ -378,7 +365,9 @@
   <div class="ad-section" id="advertise">
     <div class="ad-label">Advertisement</div>
     <div class="ad-banner" id="adBanner">
-      <img src="" alt="Advertisement" id="adImage">
+      <a href="" id="adLink" target="_blank" rel="noopener">
+        <img src="" alt="Advertisement" id="adImage">
+      </a>
     </div>
     <div class="advertise-link">
       <a href="mailto:ramy@ifeps.net">&#9993; Advertise Here</a>
@@ -413,14 +402,15 @@
 <script>
 (function() {
   var ads = [
-    'adsimages/ad1.svg',
-    'adsimages/ad2.svg',
-    'adsimages/ad3.svg'
+    { src: 'adsimages/ad1.svg', url: 'https://ifeps.net' },
+    { src: 'adsimages/ad2.svg', url: 'https://ifeps.net' },
+    { src: 'adsimages/ad3.svg', url: 'https://ifeps.net' }
   ];
   var idx = Math.floor(Math.random() * ads.length);
-  var img = document.getElementById('adImage');
-  img.src = ads[idx];
-  img.alt = 'Advertisement ' + (idx + 1);
+  var ad = ads[idx];
+  document.getElementById('adImage').src = ad.src;
+  document.getElementById('adImage').alt = 'Advertisement ' + (idx + 1);
+  document.getElementById('adLink').href = ad.url;
 })();
 </script>
 
