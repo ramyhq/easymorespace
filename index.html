@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy More Space v9.1 — Save up to 75% space in your hard drive</title>
+  <meta name="description" content="Easy More Space v9.1 compresses your photos and saves up to 75% disk space. Keep more memories with less storage. Available for Windows and Mac.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    a { color: #2b5ea7; text-decoration: none; }
+    a:hover { color: #1a3d70; text-decoration: underline; }
+
+    .top-bar {
+      background: #1a1a2e;
+      color: #aaa;
+      padding: 8px 24px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e8a838;
+    }
+    .top-bar .brand { font-weight: 600; color: #fff; letter-spacing: 0.3px; }
+    .top-bar a { color: #e8a838; text-decoration: none; margin-left: 16px; }
+    .top-bar a:hover { color: #f0c460; }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 28px 16px;
+    }
+
+    .header {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      padding: 32px 30px 24px;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2b5ea7, #4a90d9);
+    }
+    .header h1 {
+      font-size: 27px;
+      color: #1a1a2e;
+      margin-bottom: 2px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .header .version {
+      font-size: 13px;
+      color: #999;
+      font-weight: 400;
+      background: #f0f0f0;
+      padding: 2px 8px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 4px;
+    }
+    .header .tagline {
+      font-size: 14px;
+      color: #666;
+      margin-top: 10px;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+    }
+
+    .section {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      padding: 22px 28px;
+      margin-bottom: 14px;
+    }
+    .section h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f0f0f0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .download-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0 10px;
+    }
+    .dl-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 30px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      min-width: 220px;
+      transition: transform 0.1s, box-shadow 0.15s;
+    }
+    .dl-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-decoration: none;
+    }
+    .dl-btn .ico {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+    }
+    .dl-win {
+      background: #2b5ea7;
+      color: #fff;
+    }
+    .dl-win:hover { background: #1e4a8a; color: #fff; }
+    .dl-mac {
+      background: #3a3a3a;
+      color: #fff;
+    }
+    .dl-mac:hover { background: #2a2a2a; color: #fff; }
+
+    .screenshot-box {
+      background: #fafafa;
+      border: 2px dashed #ddd;
+      border-radius: 4px;
+      padding: 20px;
+      text-align: center;
+    }
+    .screenshot-box .placeholder {
+      display: inline-block;
+      width: 100%;
+      max-width: 460px;
+      height: 240px;
+      background: #eee;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      line-height: 240px;
+      color: #aaa;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 20px;
+    }
+    .features li {
+      padding: 8px 0 8px 22px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M2 6l3 3 5-6" stroke="%232b5ea7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>') left center no-repeat;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .stats {
+      display: flex;
+      gap: 16px;
+      text-align: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 16px 0;
+    }
+    .stat-box {
+      background: #f8f9fb;
+      border: 1px solid #e8eaed;
+      border-radius: 6px;
+      padding: 18px 26px;
+      min-width: 120px;
+    }
+    .stat-box .num {
+      font-size: 30px;
+      font-weight: 700;
+      color: #2b5ea7;
+      line-height: 1;
+    }
+    .stat-box .label {
+      font-size: 11px;
+      color: #888;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .ad-section {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      padding: 16px 28px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .ad-label {
+      font-size: 10px;
+      color: #bbb;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+    .ad-banner img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #eee;
+      border-radius: 2px;
+    }
+    .advertise-link {
+      margin-top: 12px;
+      font-size: 12px;
+    }
+
+    .dev-section {
+      text-align: center;
+    }
+    .ko-fi-btn {
+      display: inline-block;
+      margin: 12px 0;
+    }
+    .ko-fi-btn img {
+      height: 38px;
+    }
+    .dev-name {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    .dev-links {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .dev-links a {
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    .hire-badge {
+      display: inline-block;
+      background: #2b5ea7;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+    .hire-badge:hover { background: #1e4a8a; color: #fff; text-decoration: none; }
+
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: #aaa;
+      padding: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .download-btns { flex-direction: column; align-items: center; }
+      .header h1 { font-size: 21px; }
+      .stats { flex-direction: column; align-items: center; }
+      .features { grid-template-columns: 1fr; }
+      .screenshot-box .placeholder { height: 180px; line-height: 180px; font-size: 13px; }
+      .top-bar { font-size: 11px; padding: 8px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="brand">Easy More Space v9.1</span>
+  <span>
+    <a href="#download">Download</a>
+    <a href="#advertise">Advertise</a>
+    <a href="#developer">Developer</a>
+  </span>
+</div>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Easy More Space <span class="version">v9.1</span></h1>
+    <div class="tagline">
+      Save up to <strong>75%</strong> space in your hard drive.<br>
+      Compress your photos &mdash; keep the memory, lose the bulk.
+    </div>
+  </div>
+
+  <!-- Download -->
+  <div class="section" id="download">
+    <h2>Download</h2>
+    <p style="text-align:center;color:#777;margin-bottom:6px;">Completely free — choose your platform</p>
+    <div class="download-btns">
+      <a href="#" class="dl-btn dl-win" title="Download for Windows">
+        <svg class="ico" viewBox="0 0 30 30" fill="none">
+          <rect x="2" y="4" width="11" height="10" rx="1.5" stroke="white" stroke-width="1.8"/>
+          <rect x="16" y="4" width="11" height="10" rx="1.5" stroke="white" stroke-width="1.8"/>
+          <rect x="2" y="17" width="11" height="9" rx="1.5" stroke="white" stroke-width="1.8"/>
+          <rect x="16" y="17" width="11" height="9" rx="1.5" stroke="white" stroke-width="1.8"/>
+        </svg>
+        Download for Windows
+      </a>
+      <a href="#" class="dl-btn dl-mac" title="Download for macOS">
+        <svg class="ico" viewBox="0 0 30 30" fill="none">
+          <path d="M20 3c-.3.5-1.2 1.8-1.2 3.2 0 1.8 1.2 3.5 2.5 4.3-.5.6-1.2 1.5-2 2.4-1.3 1.7-2.6 3.4-4.6 3.4-1.4 0-2.3-.5-3.2-1-.8-.4-1.7-.9-3-.9-1.5 0-2.5.6-3.5 1.2-1 .6-2.1 1.3-3.6 1.3-2.1 0-3.6-1.8-5-3.7-1.6-2.1-2.9-5.4-2.9-8.4 0-4.8 2.8-7.3 5.5-7.3 1.8 0 3 .5 4 .9.8.3 1.5.6 2.3.6.7 0 1.4-.3 2.2-.7 1.2-.5 2.5-1.1 4.2-1.1.8 0 3.4.2 5.3 3z" fill="white"/>
+          <path d="M18.8 1.7c.4-.5.7-1.2.7-1.8 0-.2 0-.4-.1-.4-.9.2-2 .8-2.7 1.7-.5.7-1 1.5-1 2.4 0 .2 0 .3.1.3.2 0 .9-.2 1.7-.9.5-.4.9-1 1.3-1.3z" fill="white"/>
+        </svg>
+        Download for macOS
+      </a>
+    </div>
+    <p style="text-align:center;font-size:11px;color:#bbb;margin-top:10px;">
+      Version 9.1 &middot; June 2026 &middot; Windows 10/11 &amp; macOS 12+
+    </p>
+  </div>
+
+  <!-- Why Easy More Space -->
+  <div class="section">
+    <h2>Why Easy More Space?</h2>
+    <p style="margin-bottom:12px;color:#555;">
+      Storage is expensive. Google Drive caps at 15 GB. Every photo you snap eats up precious space.
+      Easy More Space compresses your images intelligently — keeping the memory intact while
+      slashing file size by up to <strong>75%</strong>. Store more moments without buying more drives.
+    </p>
+    <div class="stats">
+      <div class="stat-box">
+        <div class="num">75%</div>
+        <div class="label">Space Saved</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">10K+</div>
+        <div class="label">Photos Compressed</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">&infin;</div>
+        <div class="label">Memories Preserved</div>
+      </div>
+    </div>
+    <ul class="features">
+      <li>Batch compress hundreds of photos in one click</li>
+      <li>Smart compression — preserves visual quality</li>
+      <li>Supports JPEG, PNG, HEIC, WebP &amp; more</li>
+      <li>Drag &amp; drop — no learning curve</li>
+      <li>Works offline — photos never leave your device</li>
+      <li>Free for personal use</li>
+    </ul>
+  </div>
+
+  <!-- Screenshot -->
+  <div class="section">
+    <h2>Screenshot</h2>
+    <div class="screenshot-box">
+      <div class="placeholder">
+        App Screenshot<br>
+        <small style="font-size:11px;font-style:normal;color:#bbb;">Replace with your app screenshot</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad Section -->
+  <div class="ad-section" id="advertise">
+    <div class="ad-label">Advertisement</div>
+    <div class="ad-banner" id="adBanner">
+      <img src="" alt="Advertisement" id="adImage">
+    </div>
+    <div class="advertise-link">
+      <a href="mailto:ramy@ifeps.net">&#9993; Advertise Here</a>
+      &nbsp;&mdash;&nbsp;
+      <span style="font-size:11px;color:#bbb;">Your banner could be here</span>
+    </div>
+  </div>
+
+  <!-- Developer -->
+  <div class="section dev-section" id="developer">
+    <h2>About the Developer</h2>
+    <div class="dev-name"><strong>Ramy Waheed</strong></div>
+    <div class="dev-links">
+      <a href="https://dev.ifeps.net" target="_blank" rel="noopener" class="hire-badge">Hire Me &#8599;</a>
+      <a href="mailto:ramy@ifeps.net">Contact</a>
+    </div>
+    <div class="ko-fi-btn">
+      <a href="https://ko-fi.com/ramydmk" target="_blank" rel="noopener">
+        <img src="https://storage.ko-fi.com/cdn/brandasset/kofi_bg_tag_dark.png" alt="Support me on Ko-fi">
+      </a>
+    </div>
+    <p style="font-size:12px;color:#999;">Support is always appreciated &#9829;</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2026 Easy More Space. All rights reserved. &middot; Made with &#9829; by Ramy Waheed
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var ads = [
+    'adsimages/ad1.svg',
+    'adsimages/ad2.svg',
+    'adsimages/ad3.svg'
+  ];
+  var idx = Math.floor(Math.random() * ads.length);
+  var img = document.getElementById('adImage');
+  img.src = ads[idx];
+  img.alt = 'Advertisement ' + (idx + 1);
+})();
+</script>
+
+</body>
+</html>
