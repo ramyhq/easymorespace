@@ -1,0 +1,30 @@
+{
+  "title": "Easy More Space",
+  "text": "Save 70% of image size. Free & open source.",
+  "image": "ad1.png",
+  "link": "https://dev.ifeps.net",
+  "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad1.png",
+  "slides": [
+    {
+      "image": "ad1.png",
+      "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad1.png",
+      "title": "Easy More Space",
+      "text": "Save 70% of image size",
+      "link": "https://dev.ifeps.net"
+    },
+    {
+      "image": "ad2.png",
+      "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad2.png",
+      "title": "Hire Me",
+      "text": "Ramy Wahid — Developer",
+      "link": "https://dev.ifeps.net"
+    },
+    {
+      "image": "ad3.png",
+      "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad3.png",
+      "title": "Support This Project",
+      "text": "ko-fi.com/ramydmk",
+      "link": "https://ko-fi.com/ramydmk"
+    }
+  ]
+}
