@@ -8,23 +8,37 @@
     {
       "image": "ad1.png",
       "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad1.png",
-      "title": "Easy More Space",
-      "text": "Save 70% of image size",
-      "link": "https://dev.ifeps.net"
+      "title": "",
+      "text": "",
+      "link": "https://dev.ifeps.net/project-folyo.html"
     },
     {
       "image": "ad2.png",
       "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad2.png",
-      "title": "Hire Me",
-      "text": "Ramy Wahid — Developer",
-      "link": "https://dev.ifeps.net"
+      "title": "",
+      "text": "",
+      "link": "https://www.ifeps.net/2026/05/a-free-texturepacker-alternative-for.html"
     },
     {
       "image": "ad3.png",
       "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad3.png",
+      "title": "IFEPS TECH",
+      "text": "vist now",
+      "link": "https://ifeps.net"
+    },
+    {
+      "image": "ad4.png",
+      "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad3.png",
       "title": "Support This Project",
       "text": "ko-fi.com/ramydmk",
       "link": "https://ko-fi.com/ramydmk"
+    },
+    {
+      "image": "ad5.png",
+      "image_url": "https://raw.githubusercontent.com/ramyhq/easymorespace/main/adsimages/ad3.png",
+      "title": "",
+      "text": "",
+      "link": "https://folyo.ifeps.net/"
     }
   ]
 }
