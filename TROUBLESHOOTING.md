@@ -1,239 +1,79 @@
-# 🛠️ Easy More Space — Troubleshooting Guide
-## دليل حل المشاكل — ويندوز وماك
+# Troubleshooting Guide — دليل حل المشاكل
+
+## Windows
+
+| Problem | Solution |
+|---------|----------|
+| "Windows protected your PC" | Click **More info** → **Run anyway** |
+| "VCRUNTIME140.dll not found" | Install [VC++ Redistributable x64](https://aka.ms/vs/17/release/vc_redist.x64.exe) and restart |
+| "Python is not installed" | You ran `app.pyw` directly. Use the .exe instead: `dist\EasyMoreSpace_v9.1.exe` |
+| Sound not working after compression | Sound is muted inside the app — click 🔊/🔇 button (top right) |
+| "Another instance is already running" | Open Task Manager (`Ctrl+Shift+Esc`) → find `EasyMoreSpace_v9.1.exe` → End Task |
+| Ads not showing / connection error | Check internet connection. Try Run as Administrator. App falls back to local ads offline. |
+
+Delete lock file manually: `%TEMP%\.easymorespace.lock`
+
+## macOS
+
+| Problem | Solution |
+|---------|----------|
+| "App is damaged / can't be opened" | Run in Terminal: `xattr -cr /path/to/EasyMoreSpace_v9.1.app` |
+| "App is damaged and should be moved to Trash" | `xattr -cr /path/to/EasyMoreSpace_v9.1.app` then `codesign --force --deep --sign - /path/to/EasyMoreSpace_v9.1.app` |
+| App not in Launchpad / Dock | Drag `.app` to `/Applications` folder |
+| App icon looks wrong | Developer: design 1024x1024 PNG with transparent background & ~20% rounded corners |
+| Sound not working | Click 🔊/🔇 button inside the app (top right) |
+| "Another instance is already running" | Run in Terminal: `pkill -f EasyMoreSpace` |
+
+Delete lock file manually: `rm ~/.easymorespace.lock`
+
+For macOS Gatekeeper bypass without Terminal: **System Settings → Privacy & Security → Open Anyway**
+
+## General — عام
+
+| Problem | Solution |
+|---------|----------|
+| Compressed images still large | Lower Quality slider (60-70%) and Size slider (40-50%). Try WebP or AVIF output. |
+| Compressed images look bad | Raise Quality slider (80-100%) and Size slider (80-100%). Try JPG instead of WebP/AVIF. |
+| Can't find compressed files | They're in `sourcefolder_compressed`. Click the blue **Open Folder** button after compression. |
+| Compress / Rename button not working | Select a source folder or files first. Check you're not in "Rename Only" mode. |
+| App is slow / hangs | Split large folders into smaller batches. Avoid huge RAW/TIFF files — use JPG/WebP output. |
+| Language not available | App supports English, العربية, Français. Click language button (top right). |
 
 ---
 
-## ويندوز (Windows)
+## ويندوز
 
-### ❌ التطبيق مش بيفتح / "Windows protected your PC"
+| المشكلة | الحل |
+|---------|------|
+| "Windows protected your PC" | اضغط **More info** ثم **Run anyway** |
+| "VCRUNTIME140.dll not found" | حمّل [VC++ Redistributable x64](https://aka.ms/vs/17/release/vc_redist.x64.exe) واعمل Restart |
+| "Python is not installed" | شغّلت `app.pyw` مباشرة. استخدم الملف `.exe` من `dist\EasyMoreSpace_v9.1.exe` |
+| الصوت مش شغال بعد الضغط | الصوت مكتوم — اضغط زر 🔊/🔇 (فوق على اليمين) |
+| "Another instance is already running" | افتح Task Manager (`Ctrl+Shift+Esc`) → دور على `EasyMoreSpace_v9.1.exe` → End Task |
+| الإعلانات مش بتظهر | تأكد من الإنترنت. جرب Run as Administrator. التطبيق بيستخدم إعلانات محلية بدون نت. |
 
-**السبب:** Windows SmartScreen بيمنع التطبيقات غير الموقعة.
+## ماك
 
-**الحل:**
-```
-١- اضغط "More info"
-٢- اضغط "Run anyway"
-```
+| المشكلة | الحل |
+|---------|------|
+| "App is damaged / can't be opened" | افتح Terminal واكتب: `xattr -cr /path/to/EasyMoreSpace_v9.1.app` |
+| "App is damaged and should be moved to Trash" | `xattr -cr` ثم `codesign --force --deep --sign -` |
+| التطبيق مش في Launchpad | اسحب `.app` إلى مجلد `/Applications` |
+| أيقونة التطبيق مش مظبوطة | للمطور: صمم PNG 1024×1024 بخلفية شفافة وزوايا دائرية |
+| الصوت مش شغال | اضغط زر 🔊/🔇 جوه التطبيق (فوق على اليمين) |
+| "Another instance is already running" | افتح Terminal واكتب: `pkill -f EasyMoreSpace` |
 
-**للنشر (للمطور):** اشترِ شهادة Code Signing (EV Certificate) ووقّع الـ `.exe`.
+## عام
 
----
-
-### ❌ "Python is not installed"
-
-**السبب:** بتحاول تشغّل `app.pyw` مباشرة بدل الـ `.exe`.
-
-**الحل:** التطبيق `.exe` قائم بذاته — مش محتاج بايثون متثبت. شغّله من الملف:
-```
-dist\EasyMoreSpace_v9.1.exe
-```
-
----
-
-### ❌ "VCRUNTIME140.dll was not found"
-
-**السبب:** Microsoft Visual C++ Redistributable مش مثبت.
-
-**الحل:** حمّل من مايكروسوفت:
-- [VC++ Redistributable x64](https://aka.ms/vs/17/release/vc_redist.x64.exe)
-- ثبت واعمل Restart للجهاز.
+| المشكلة | الحل |
+|---------|------|
+| الصور المضغوطة حجمها كبير | قلل شريط الجودة (60-70%) والحجم (40-50%). جرب WebP أو AVIF. |
+| الصور المضغوطة مشوهة | ارفع شريط الجودة (80-100%) والحجم (80-100%). جرب JPG. |
+| مش عارف أوصل للملفات المضغوطة | في مجلد `اسم_المجلد_compressed`. اضغط زر **Open Folder** الأزرق. |
+| زر Compress / Rename مش شغال | اختر مجلد أو ملفات الأول. تأكد إنك مش على وضع "Rename Only". |
+| التطبيق بطيء | قسم الصور على دفعات أصغر. تجنب RAW/TIFF الضخمة. |
+| اللغة مش متوفرة | التطبيق بيدعم English, العربية, Français. اضغط زر اللغة (فوق على اليمين). |
 
 ---
 
-### ❌ الصوت مش شغال بعد الضغط
-
-**السبب:** الصوت مكتوم (Mute) من جوه التطبيق.
-
-**الحل:** اضغط على زر 🔊/🔇 (فوق على اليمين) لتشغيل الصوت.
-
----
-
-### ❌ "Another instance is already running"
-
-**السبب:** التطبيق شغال بالفعل في الخلفية. نظام القفل بيمنع تشغيل نسختين.
-
-**الحل:**
-- افتح Task Manager (`Ctrl + Shift + Esc`)
-- دور على `EasyMoreSpace_v9.1.exe`
-- اعمل End Task
-- أو اعمل Restart للجهاز
-
----
-
-### ❌ الإعلانات مش بتظهر / خطأ في الاتصال
-
-**السبب:** مفيش اتصال إنترنت.
-
-**الحل:**
-- تأكد من اتصالك بالإنترنت
-- لو النت شغال: جرب تشغل التطبيق كـ Administrator (كليك يمين → Run as administrator)
-- التطبيق بيستخدم إعلانات محلية لو النت مش متوفر
-
----
-
-## ماك (macOS)
-
-### ❌ "can't be opened because it may be damaged or incomplete"
-
-**السبب:** macOS Gatekeeper بيمنع التطبيقات غير الموقعة (quarantine).
-
-**الحل — الطريقة الأولى (الأسهل):**
-```
-افتح Terminal واكتب:
-xattr -cr /path/to/EasyMoreSpace_v9.1.app
-```
-(اسحب ملف `.app` وأفلته في الـ Terminal بعد `xattr -cr` عشان يكتب المسار تلقائي)
-
-**الحل — الطريقة الثانية (يدوي):**
-```
-System Settings → Privacy & Security → اضغط "Open Anyway"
-```
-
----
-
-### ❌ "App is damaged and should be moved to Trash"
-
-**السبب:** مشكلة في التوقيع الرقمي أو نقل التطبيق من جهاز تاني.
-
-**الحل — نفّذ الأمر ده في Terminal:**
-```bash
-xattr -cr /path/to/EasyMoreSpace_v9.1.app
-codesign --force --deep --sign - /path/to/EasyMoreSpace_v9.1.app
-```
-
----
-
-### ❌ التطبيق مش بيظهر في Launchpad / Dock
-
-**السبب:** التطبيق مش منسوخ لمجلد `Applications`.
-
-**الحل:** اسحب `EasyMoreSpace_v9.1.app` إلى مجلد `/Applications`.
-
----
-
-### ❌ أيقونة التطبيق شكلها مش مضبوط
-
-**السبب:** macOS بيطبّق rounding تلقائي على الأيقونات، لكن لو الأيقونة الأصلية مش متصممة بشكل صحيح ممكن يظهر شكل مش حلو.
-
-**الحل (للمطور):** صمّم أيقونة PNG بحجم 1024×1024 مع:
-- خلفية شفافة (Transparent)
-- زوايا دائرية (Rounded corners) بنسبة ~20%
-- أو استخدم أداة "Apple Icon Image" لتصميم أيقونة بمواصفات الماك
-
----
-
-### ❌ الصوت مش شغال
-
-**السبب:** الصوت مكتوم (Mute) من جوه التطبيق.
-
-**الحل:** اضغط على زر 🔊/🔇 (فوق على اليمين) لتشغيل الصوت.
-
----
-
-### ❌ "Another instance is already running"
-
-**السبب:** التطبيق شغال بالفعل في الخلفية.
-
-**الحل:**
-```
-افتح Terminal واكتب:
-pkill -f EasyMoreSpace
-```
-أو اعمل Log out وLog in من جديد.
-
----
-
-## عام (ويندوز وماك)
-
-### ❌ الصور المضغوطة حجمها كبير / مش فارقة
-
-**السبب:** إعدادات الضغط منخفضة.
-
-**الحل:**
-- حرك شريط **الجودة (Quality)** إلى اليسار (مثلاً 60-70%)
-- حرك شريط **الحجم (Size)** إلى اليسار (مثلاً 40-50%)
-- جرّب صيغة **WebP** أو **AVIF** — بتدي حجم أصغر بنفس الجودة
-
----
-
-### ❌ الصور المضغوطة مشوهة / جودتها سيئة
-
-**السبب:** إعدادات الضغط عالية جداً.
-
-**الحل:**
-- حرك شريط **الجودة (Quality)** إلى اليمين (80-100%)
-- حرك شريط **الحجم (Size)** إلى اليمين (80-100%)
-- لو بتستخدم WebP/AVIF، جرّب JPG
-
----
-
-### ❌ مش عارف أوصل للملفات المضغوطة
-
-**السبب:** الملفات المضغوطة بتتحط في مجلد `اسم_المجلد_compressed` جوه مجلد المصدر.
-
-**الحل:**
-- بعد الضغط، اضغط زر **"Open Folder"** الأزرق — هيفتحلك المجلد مباشرة
-- أو افتح المجلد اللي فيه الصور الأصلية، هتلاقي مجلد `_compressed` جواه
-
----
-
-### ❌ زر Compress / Rename مش شغال
-
-**السبب (١):** مختارش مجلد مصدر أو ملفات.
-
-**الحل:** اختر مجلد (Folder Mode) أو ملفات (Files Mode) الأول.
-
-**السبب (٢):** مكتوب خيار "Rename only" ومش محتاج تضغط.
-
-**الحل:** تأكد إنك عاوز تضغط ولا تسمي فقط (Rename only).
-
----
-
-### ❌ التطبيق بطيء / بيهنج
-
-**السبب (١):** عدد صور كبير جداً (أكتر من ١٠٠٠ صورة).
-
-**الحل:** قسم الصور على دفعات أصغر.
-
-**السبب (٢):** صور بحجم كبير جداً (RAW, TIFF ضخمة).
-
-**الحل:** استخدم صيغة JPG أو WebP output.
-
----
-
-### ❌ الترجمة مش متوفرة بلغتي
-
-**السبب:** التطبيق بيدعم ٣ لغات: English, العربية, Français.
-
-**الحل:** اضغط على زر اللغة (أعلى اليمين) لتغيير اللغة.
-
----
-
-## 🧹 مسح القفل (Single Instance Lock)
-
-لو التطبيق مش عاوز يشتغل وبيقفل على طول بسبب "Another instance":
-
-**ويندوز:**
-```
-احذف الملف: %TEMP%\.easymorespace.lock
-```
-(انسخ المسار ده والصقه في File Explorer)
-
-**ماك:**
-```bash
-rm ~/.easymorespace.lock
-```
-
----
-
-## 📞 للدعم
-
-لو المشكلة لسه موجودة:
-- **Website:** [dev.ifeps.net](https://dev.ifeps.net)
-- **Support:** [ko-fi.com/ramydmk](https://ko-fi.com/ramydmk)
-
----
-
-> **Developer:** Ramy Wahid  
-> **Version:** 9.1  
-> **Platform:** Windows 10/11 · macOS 12+
+> **Developer:** Ramy Waheed · **Version:** 9.1 · **Platform:** Windows 10/11 · macOS 12+

@@ -387,26 +387,28 @@
 
   <!-- Troubleshooting -->
   <div class="section" id="help">
-    <h2>Quick Help</h2>
+    <h2>Troubleshooting</h2>
     <div class="help-grid">
       <div>
         <strong style="font-size:13px;color:#1a1a2e;">Windows</strong>
-        <ul class="mini-features">
-          <li>"Protected your PC" &mdash; Click <em>More info</em> &rarr; <em>Run anyway</em></li>
-          <li>"VCRUNTIME140.dll" &mdash; Install <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">VC++ Redist</a></li>
-          <li>Another instance? End task in Task Manager</li>
-        </ul>
+        <table style="width:100%;font-size:12px;margin-top:8px;border-collapse:collapse;">
+          <tr><td style="padding:4px 0;border-bottom:1px solid #eee;color:#888;width:45%;">Problem</td><td style="padding:4px 0;border-bottom:1px solid #eee;color:#888;">Solution</td></tr>
+          <tr><td style="padding:4px 8px 4px 0;border-bottom:1px solid #f5f5f5;">"Windows protected your PC"</td><td style="padding:4px 0;border-bottom:1px solid #f5f5f5;"><em>More info</em> → <em>Run anyway</em></td></tr>
+          <tr><td style="padding:4px 8px 4px 0;border-bottom:1px solid #f5f5f5;">"VCRUNTIME140.dll not found"</td><td style="padding:4px 0;border-bottom:1px solid #f5f5f5;"><a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">VC++ Redist x64</a></td></tr>
+          <tr><td style="padding:4px 8px 4px 0;border-bottom:1px solid #f5f5f5;">Another instance running</td><td style="padding:4px 0;border-bottom:1px solid #f5f5f5;">End task in Task Manager</td></tr>
+        </table>
       </div>
       <div>
         <strong style="font-size:13px;color:#1a1a2e;">macOS</strong>
-        <ul class="mini-features">
-          <li>"App is damaged" &mdash; Run: <code>xattr -cr</code> on the .app</li>
-          <li>Not in Launchpad &mdash; Drag to /Applications</li>
-          <li>Another instance? <code>pkill -f EasyMoreSpace</code></li>
-        </ul>
+        <table style="width:100%;font-size:12px;margin-top:8px;border-collapse:collapse;">
+          <tr><td style="padding:4px 0;border-bottom:1px solid #eee;color:#888;width:45%;">Problem</td><td style="padding:4px 0;border-bottom:1px solid #eee;color:#888;">Solution</td></tr>
+          <tr><td style="padding:4px 8px 4px 0;border-bottom:1px solid #f5f5f5;">"App is damaged"</td><td style="padding:4px 0;border-bottom:1px solid #f5f5f5;"><code>xattr -cr</code> the .app</td></tr>
+          <tr><td style="padding:4px 8px 4px 0;border-bottom:1px solid #f5f5f5;">Not in Launchpad</td><td style="padding:4px 0;border-bottom:1px solid #f5f5f5;">Drag to /Applications</td></tr>
+          <tr><td style="padding:4px 8px 4px 0;border-bottom:1px solid #f5f5f5;">Another instance running</td><td style="padding:4px 0;border-bottom:1px solid #f5f5f5;"><code>pkill -f EasyMoreSpace</code></td></tr>
+        </table>
       </div>
     </div>
-    <p style="font-size:11px;color:#bbb;margin-top:10px;text-align:center;">Full guide: <a href="https://github.com/ramyhq/easymorespace/blob/main/TROUBLESHOOTING.md">TROUBLESHOOTING.md</a></p>
+    <p style="font-size:11px;color:#bbb;margin-top:12px;text-align:center;">Full guide: <a href="TROUBLESHOOTING.md">TROUBLESHOOTING.md</a> (English &amp; عربي)</p>
   </div>
 
   <!-- Ad Section -->
