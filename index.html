@@ -60,6 +60,16 @@
       margin-bottom: 2px;
       font-weight: 700;
       letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header h1 .app-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      flex-shrink: 0;
     }
     .header .version {
       font-size: 13px;
@@ -306,7 +316,7 @@
 
   <!-- Header -->
   <div class="header">
-    <h1>Easy More Space <span class="version">v9.1</span></h1>
+    <h1><img src="ems%20cover.png" alt="Easy More Space Icon" class="app-icon">Easy More Space <span class="version">v9.1</span></h1>
     <div class="tagline">
       Save up to <strong>75%</strong> space in your hard drive.<br>
       Smart image compression &mdash; preserve memories for a lifetime. No quality loss. No metadata lost. No rotation.
