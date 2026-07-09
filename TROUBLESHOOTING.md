@@ -77,3 +77,5 @@ For macOS Gatekeeper bypass without Terminal: **System Settings → Privacy & Se
 ---
 
 > **Developer:** Ramy Waheed · **Version:** 9.1 · **Platform:** Windows 10/11 · macOS 12+
+>
+> **GitHub:** [github.com/ramyhq/easymorespace](https://github.com/ramyhq/easymorespace)
