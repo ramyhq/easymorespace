@@ -76,7 +76,7 @@ Full troubleshooting: [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 - **Website:** [easymorespace.ifeps.net](https://easymorespace.ifeps.net)
 - **Developer:** [dev.ifeps.net](https://dev.ifeps.net)
 - **Support:** [ko-fi.com/ramydmk](https://ko-fi.com/ramydmk)
-- **Advertise:** [ramy@ifeps.net](mailto:ramy@ifeps.net)
+- **Advertise:** [ramy.dmk@gmail.com](mailto:ramy.dmk@gmail.com)
 
 ---
 
