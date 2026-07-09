@@ -4,8 +4,8 @@
 
 Free, open-source desktop image compressor. Built for Windows & macOS.
 
-[![Download](https://img.shields.io/badge/Download-Windows-blue?logo=windows)](https://github.com/ramyhq/easymorespace-app/releases/download/v9.1/EasyMoreSpace_v9.1_Win.exe.zip)
-[![Download](https://img.shields.io/badge/Download-macOS-silver?logo=apple)](https://github.com/ramyhq/easymorespace-app/releases/download/v9.1/EasyMoreSpace_v9.1_Mac.dmg.zip)
+[![Download](https://img.shields.io/badge/Download-Windows-blue?logo=windows)](https://github.com/ramyhq/easymorespace/releases/download/v9.1.1/Easy.More.Space.v9.1_windows.zip)
+[![Download](https://img.shields.io/badge/Download-macOS-silver?logo=apple)](https://github.com/ramyhq/easymorespace/releases/download/v9.1.1/Easy.More.Space.v9.1_macos.zip)
 [![Website](https://img.shields.io/badge/Website-easymorespace.ifeps.net-2b5ea7)](https://easymorespace.ifeps.net)
 [![Ko‑fi](https://img.shields.io/badge/Support-Ko--fi-red?logo=kofi)](https://ko-fi.com/ramydmk)
 
@@ -44,10 +44,10 @@ Full feature list: [FEATURES.md](FEATURES.md)
 
 | Platform | File | Size |
 |----------|------|------|
-| Windows 10/11 | [EasyMoreSpace_v9.1_Win.exe.zip](https://github.com/ramyhq/easymorespace-app/releases/download/v9.1/EasyMoreSpace_v9.1_Win.exe.zip) | ~18 MB |
-| macOS 12+ | [EasyMoreSpace_v9.1_Mac.dmg.zip](https://github.com/ramyhq/easymorespace-app/releases/download/v9.1/EasyMoreSpace_v9.1_Mac.dmg.zip) | ~18 MB |
+| Windows 10/11 | [EasyMoreSpace_v9.1_Win.exe.zip](https://github.com/ramyhq/easymorespace/releases/download/v9.1.1/Easy.More.Space.v9.1_windows.zip) | ~18 MB |
+| macOS 12+ | [EasyMoreSpace_v9.1_Mac.dmg.zip](https://github.com/ramyhq/easymorespace/releases/download/v9.1.1/Easy.More.Space.v9.1_macos.zip) | ~18 MB |
 
-> All releases: [github.com/ramyhq/easymorespace-app/releases](https://github.com/ramyhq/easymorespace-app/releases)
+> All releases: [github.com/ramyhq/easymorespace/releases](https://github.com/ramyhq/easymorespace/releases)
 
 ---
 
