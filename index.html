@@ -499,8 +499,6 @@
 (function() {
   var downloadsEl = document.getElementById('downloadCount');
   var visitorEl = document.getElementById('visitorCount');
-  var COUNTAPI_NS = 'ems-landing';
-  var COUNTAPI_KEY = 'visits';
 
   function format(n) {
     if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
@@ -535,13 +533,13 @@
 
   function fetchVisitors(getOnly) {
     var url = getOnly
-      ? 'https://api.countapi.xyz/get/' + COUNTAPI_NS + '/' + COUNTAPI_KEY
-      : 'https://api.countapi.xyz/hit/' + COUNTAPI_NS + '/' + COUNTAPI_KEY;
+      ? 'https://api.counterapi.dev/v1/easymorespace/visits/'
+      : 'https://api.counterapi.dev/v1/easymorespace/visits/up';
 
     fetch(url)
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        animate(visitorEl, format(data.value + BASE_OFFSET));
+        animate(visitorEl, format(data.count + BASE_OFFSET));
       })
       .catch(function() { /* silent */ });
   }
