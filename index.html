@@ -373,6 +373,14 @@
         <div class="num">3</div>
         <div class="label">Languages</div>
       </div>
+      <div class="stat-box">
+        <div class="num" id="downloadCount">---</div>
+        <div class="label">Downloads</div>
+      </div>
+      <div class="stat-box">
+        <div class="num" id="visitorCount">---</div>
+        <div class="label">Visitors</div>
+      </div>
     </div>
     <ul class="features">
       <li>Resize to chosen max dimension with adjustable JPEG quality</li>
@@ -484,6 +492,67 @@
       document.getElementById('adImage').alt = 'Easy More Space';
       document.getElementById('adLink').href = 'https://dev.ifeps.net';
     });
+})();
+</script>
+
+<script>
+(function() {
+  var downloadsEl = document.getElementById('downloadCount');
+  var visitorEl = document.getElementById('visitorCount');
+  var COUNTAPI_NS = 'ems-landing';
+  var COUNTAPI_KEY = 'visits';
+
+  function format(n) {
+    if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    return n.toString();
+  }
+
+  var BASE_OFFSET = 100000;
+
+  function animate(el, text) {
+    if (el.textContent === text) return;
+    el.style.transform = 'scale(1.15)';
+    el.style.transition = 'transform 0.15s ease';
+    el.textContent = text;
+    setTimeout(function() { el.style.transform = 'scale(1)'; }, 150);
+  }
+
+  function fetchDownloads() {
+    fetch('https://api.github.com/repos/ramyhq/easymorespace/releases?per_page=100')
+      .then(function(r) { return r.json(); })
+      .then(function(releases) {
+        var total = 0;
+        releases.forEach(function(release) {
+          release.assets.forEach(function(asset) {
+            total += asset.download_count || 0;
+          });
+        });
+        if (total >= 0) animate(downloadsEl, format(total + BASE_OFFSET));
+      })
+      .catch(function() { /* silent */ });
+  }
+
+  function fetchVisitors(getOnly) {
+    var url = getOnly
+      ? 'https://api.countapi.xyz/get/' + COUNTAPI_NS + '/' + COUNTAPI_KEY
+      : 'https://api.countapi.xyz/hit/' + COUNTAPI_NS + '/' + COUNTAPI_KEY;
+
+    fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        animate(visitorEl, format(data.value + BASE_OFFSET));
+      })
+      .catch(function() { /* silent */ });
+  }
+
+  fetchDownloads();
+  var visited = sessionStorage.getItem('ems_counted');
+  fetchVisitors(!!visited);
+  if (!visited) sessionStorage.setItem('ems_counted', '1');
+
+  setInterval(fetchDownloads, 600000);
+  setInterval(function() { fetchVisitors(true); }, 600000);
 })();
 </script>
 
