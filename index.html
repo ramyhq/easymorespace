@@ -351,6 +351,7 @@
     <p style="text-align:center;font-size:12px;margin-top:6px;">
       <a href="https://github.com/ramyhq/easymorespace" target="_blank" rel="noopener">&#128279; View on GitHub</a>
     </p>
+    <p style="text-align:center;font-size:12px;color:#888;margin-top:4px;" id="downloadCount">--- downloads</p>
   </div>
 
   <!-- Why Easy More Space -->
@@ -372,10 +373,6 @@
       <div class="stat-box">
         <div class="num">3</div>
         <div class="label">Languages</div>
-      </div>
-      <div class="stat-box">
-        <div class="num" id="downloadCount">---</div>
-        <div class="label">Downloads</div>
       </div>
       <div class="stat-box">
         <div class="num" id="visitorCount">---</div>
@@ -501,9 +498,7 @@
   var visitorEl = document.getElementById('visitorCount');
 
   function format(n) {
-    if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
-    return n.toString();
+    return n.toLocaleString('en-US');
   }
 
   var BASE_OFFSET = 100000;
@@ -526,7 +521,7 @@
             total += asset.download_count || 0;
           });
         });
-        if (total >= 0) animate(downloadsEl, format(total + BASE_OFFSET));
+        if (total >= 0) animate(downloadsEl, format(total + BASE_OFFSET) + ' downloads');
       })
       .catch(function() { /* silent */ });
   }
